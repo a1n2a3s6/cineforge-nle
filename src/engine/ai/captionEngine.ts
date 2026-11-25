@@ -77,7 +77,7 @@ export const VIRAL_CAPTION_PRESETS: Record<
 };
 
 export function detectArabicRtl(text: string): boolean {
-  return /[؀-ۿݐ-ݿࢠ-ࣿ]/.test(text);
+  return /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/.test(text);
 }
 
 export function buildCaptionSegment(
@@ -128,18 +128,13 @@ export function parseSrtOrVtt(
   rawText: string,
   presetId: CaptionPresetId = 'hormozi-pop'
 ): CaptionSegment[] {
-  const normalized = rawText.replace(/
-/g, '
-').replace(/^WEBVTT\s*
-+/i, '');
-  const blocks = normalized.split(/
-{2,}/);
+  const normalized = rawText.replace(/\r\n/g, '\n').replace(/^WEBVTT\s*\n+/i, '');
+  const blocks = normalized.split(/\n{2,}/);
   const segments: CaptionSegment[] = [];
 
   for (const block of blocks) {
     const lines = block
-      .split('
-')
+      .split('\n')
       .map((l) => l.trim())
       .filter(Boolean);
     if (lines.length < 2) continue;
@@ -174,13 +169,9 @@ export function exportCaptionsToSrt(captions: CaptionSegment[]): string {
     .sort((a, b) => a.startTime - b.startTime)
     .map(
       (cap, idx) =>
-        `${idx + 1}
-${formatSrtTime(cap.startTime)} --> ${formatSrtTime(cap.endTime)}
-${cap.text}`
+        `${idx + 1}\n${formatSrtTime(cap.startTime)} --> ${formatSrtTime(cap.endTime)}\n${cap.text}`
     )
-    .join('
-
-');
+    .join('\n\n');
 }
 
 export function renderKaraokeCaption(
