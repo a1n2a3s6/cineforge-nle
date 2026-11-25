@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440">
+  <defs>
+    <pattern id="bpGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#181C24" stroke-width="0.7" />
+    </pattern>
+    <style>
+      .playhead { animation: runHead 7s linear infinite; }
+      .vu1 { animation: vuBounce 0.9s ease-in-out infinite alternate; }
+      .vu2 { animation: vuBounce 0.7s ease-in-out 0.2s infinite alternate; }
+      .scope-pulse { animation: scopeShift 3.6s ease-in-out infinite; }
+      @keyframes runHead {
+        0% { transform: translateX(0px); }
+        100% { transform: translateX(780px); }
+      }
+      @keyframes vuBounce {
+        0% { height: 22px; y: 128px; }
+        100% { height: 76px; y: 74px; }
+      }
+      @keyframes scopeShift {
+        0%, 100% { opacity: 0.75; }
+        50% { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  
+  <rect width="1200" height="440" rx="14" fill="#090A0D" stroke="#262B36" stroke-width="2" />
+  <rect width="1200" height="440" rx="14" fill="url(#bpGrid)" />
+
+  
+  <rect x="1" y="1" width="1198" height="40" rx="13" fill="#0F1117" />
+  <line x1="1" y1="41" x2="1199" y2="41" stroke="#222631" />
+  <text x="22" y="25" fill="#FFFFFF" font-family="Consolas, monospace" font-size="13" font-weight="800" letter-spacing="1.5">CINEFORGE PRO // WEBGL2 NLE</text>
+  <text x="308" y="25" fill="#64748B" font-family="Consolas, monospace" font-size="11">PROXY: <tspan fill="#10B981" font-weight="700">1/2 RES (60.0 FPS)</tspan>  │  SHADER: <tspan fill="#38BDF8">1.4ms GPU</tspan>  │  RAM: <tspan fill="#FBBF24">184 MB</tspan></text>
+  <rect x="1032" y="8" width="146" height="24" rx="4" fill="#EF4444" fill-opacity="0.16" stroke="#EF4444" />
+  <text x="1105" y="24" text-anchor="middle" fill="#FCA5A5" font-family="Consolas, monospace" font-size="10" font-weight="700">DAY 18 // MEGA BUILD</text>
+
+  
+  <g transform="translate(22, 58)">
+    <rect width="278" height="176" rx="10" fill="#0C0E13" stroke="#222631" />
+    <text x="14" y="24" fill="#94A3B8" font-family="Consolas, monospace" font-size="10" font-weight="700">WEBGL2 RGB PARADE SCOPE</text>
+    <g class="scope-pulse" transform="translate(14, 38)">
+      
+      <path d="M0 110 Q20 40 40 78 T76 52 L76 122 L0 122 Z" fill="#EF4444" fill-opacity="0.28" stroke="#EF4444" stroke-width="1.5" />
+      
+      <path d="M86 110 Q106 54 126 68 T162 42 L162 122 L86 122 Z" fill="#10B981" fill-opacity="0.28" stroke="#10B981" stroke-width="1.5" />
+      
+      <path d="M172 110 Q192 66 212 46 T248 64 L248 122 L172 122 Z" fill="#38BDF8" fill-opacity="0.28" stroke="#38BDF8" stroke-width="1.5" />
+    </g>
+  </g>
+
+  
+  <g transform="translate(316, 58)">
+    <rect width="584" height="176" rx="10" fill="#0D111A" stroke="#38BDF8" stroke-opacity="0.6" stroke-width="1.5" />
+    <text x="16" y="24" fill="#38BDF8" font-family="Consolas, monospace" font-size="10" font-weight="700">PROGRAM MONITOR  •  TEAL &amp; ORANGE LUT  •  CHROMA KEY ACTIVE</text>
+    
+    <rect x="42" y="38" width="500" height="118" rx="6" fill="none" stroke="#334155" stroke-dasharray="4 4" />
+    <text x="292" y="92" text-anchor="middle" fill="#FFFFFF" font-family="&#39;Segoe UI&#39;, sans-serif" font-size="22" font-weight="900">مونتاج احترافي على <tspan fill="#FBBF24">المتصفح</tspan> ⚡</text>
+    <text x="292" y="122" text-anchor="middle" fill="#94A3B8" font-family="Consolas, monospace" font-size="11">AI Director: "Cut silences + Teal-Orange LUT + Arabic Karaoke Captions"</text>
+  </g>
+
+  
+  <g transform="translate(916, 58)">
+    <rect width="262" height="176" rx="10" fill="#0C0E13" stroke="#222631" />
+    <text x="14" y="24" fill="#94A3B8" font-family="Consolas, monospace" font-size="10" font-weight="700">WEB AUDIO MIXER (dB)</text>
+    <rect x="24" y="42" width="16" height="110" rx="3" fill="#181C24" />
+    <rect class="vu1" x="24" y="78" width="16" height="74" rx="3" fill="#10B981" />
+    <rect x="48" y="42" width="16" height="110" rx="3" fill="#181C24" />
+    <rect class="vu2" x="48" y="88" width="16" height="64" rx="3" fill="#34D399" />
+    <g transform="translate(86, 52)" font-family="Consolas, monospace" font-size="11">
+      <text x="0" y="12" fill="#E2E8F0" font-weight="700">A1: VOICE (EQ + COMP)</text>
+      <text x="0" y="36" fill="#34D399">● Auto-Silence: -38dB</text>
+      <text x="0" y="60" fill="#FBBF24">● 14 Silences Removed</text>
+      <text x="0" y="88" fill="#38BDF8">● Beat Sync: 124 BPM</text>
+    </g>
+  </g>
+
+  
+  <g transform="translate(22, 250)">
+    <rect width="1156" height="170" rx="10" fill="#0C0E13" stroke="#222631" />
+    
+    <g font-family="Consolas, monospace" font-size="10" font-weight="700">
+      <text x="14" y="36" fill="#FBBF24">T1 CAPTIONS</text>
+      <text x="14" y="72" fill="#38BDF8">V2 OVERLAY</text>
+      <text x="14" y="108" fill="#10B981">V1 MAIN CAM</text>
+      <text x="14" y="144" fill="#F43F5E">A1 MUSIC/VO</text>
+    </g>
+    <line x1="112" y1="0" x2="112" y2="170" stroke="#222631" />
+
+    
+    <rect x="130" y="20" width="220" height="24" rx="5" fill="#F59E0B" fill-opacity="0.22" stroke="#F59E0B" />
+    <text x="142" y="36" fill="#FEF08A" font-family="Consolas, monospace" font-size="10">AR/EN Karaoke Caption Block</text>
+    <rect x="400" y="20" width="260" height="24" rx="5" fill="#F59E0B" fill-opacity="0.22" stroke="#F59E0B" />
+    <text x="412" y="36" fill="#FEF08A" font-family="Consolas, monospace" font-size="10">Viral Hook Subtitles (RTL)</text>
+
+    <rect x="280" y="56" width="310" height="24" rx="5" fill="#38BDF8" fill-opacity="0.20" stroke="#38BDF8" />
+    <text x="292" y="72" fill="#BAE6FD" font-family="Consolas, monospace" font-size="10">B-Roll + Chroma Key + Keyframe Zoom ◆</text>
+
+    <rect x="130" y="92" width="340" height="24" rx="5" fill="#10B981" fill-opacity="0.22" stroke="#10B981" />
+    <text x="142" y="108" fill="#A7F3D0" font-family="Consolas, monospace" font-size="10">A-Roll_01.mp4 [Auto-Cut Silences]</text>
+    <rect x="480" y="92" width="420" height="24" rx="5" fill="#10B981" fill-opacity="0.22" stroke="#10B981" />
+    <text x="492" y="108" fill="#A7F3D0" font-family="Consolas, monospace" font-size="10">A-Roll_02.mp4 [Whip Pan Transition]</text>
+
+    <rect x="130" y="128" width="980" height="24" rx="5" fill="#F43F5E" fill-opacity="0.18" stroke="#F43F5E" />
+    <text x="142" y="144" fill="#FECDD3" font-family="Consolas, monospace" font-size="10">Beat_Track_124BPM.mp3  │  ◆ Beat Markers Synced  │  3-Band EQ + Compressor</text>
+
+    
+    <g class="playhead">
+      <line x1="140" y1="6" x2="140" y2="164" stroke="#FFFFFF" stroke-width="2" />
+      <polygon points="134,4 146,4 140,14" fill="#FFFFFF" />
+    </g>
+  </g>
+</svg>
