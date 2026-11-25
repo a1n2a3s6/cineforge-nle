@@ -9,7 +9,7 @@ interface TrackAudioChain {
   panner: StereoPannerNode;
   fader: GainNode;
   analyser: AnalyserNode;
-  meterBuffer: Float32Array;
+  meterBuffer: Float32Array<ArrayBuffer>;
   compressorActive: boolean;
 }
 
@@ -17,7 +17,7 @@ class MultiTrackAudioMixer {
   private ctx: AudioContext | null = null;
   private masterGain: GainNode | null = null;
   private masterAnalyser: AnalyserNode | null = null;
-  private masterBuffer: Float32Array = new Float32Array(256);
+  private masterBuffer: Float32Array<ArrayBuffer> = new Float32Array(256);
   private trackChains = new Map<string, TrackAudioChain>();
   private sourceNodes = new WeakMap<HTMLAudioElement, MediaElementAudioSourceNode>();
   private elementTrackBinding = new WeakMap<HTMLAudioElement, string>();
@@ -149,7 +149,7 @@ class MultiTrackAudioMixer {
     }
   }
 
-  private computeRmsDb(analyser: AnalyserNode, buffer: Float32Array): number {
+  private computeRmsDb(analyser: AnalyserNode, buffer: Float32Array<ArrayBuffer>): number {
     analyser.getFloatTimeDomainData(buffer);
     let sumSq = 0;
     for (let i = 0; i < buffer.length; i += 1) {
